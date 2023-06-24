@@ -44,6 +44,7 @@ const Search: React.FC<SearchProps> = ({ onSearchChange }) => {
       value={search}
       onChange={handleOnChange}
       loadOptions={loadOptions}
+      
     />
   );
 };

@@ -4,7 +4,6 @@ import CurrentWeather from "./components/current-weather";
 import Forecast from "./components/forecast";
 import Search from "./components/search";
 
-
 function App() {
   const [currentWeather, setCurrentWeather] = useState<any>(null);
   const [forecast, setForecast] = useState<any>(null);
@@ -23,8 +22,8 @@ function App() {
       .then(async (response) => {
         const weatherResponse = await response[0].json();
         const forecastResponse = await response[1].json();
-        console.log('wea', weatherResponse);
-        console.log('for', forecastResponse);
+        console.log("wea", weatherResponse);
+        console.log("for", forecastResponse);
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast({ city: searchData.label, ...forecastResponse });
       })
@@ -32,11 +31,15 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
+    <main className="items-center justify-between text-center p-10">
+      <h1 className="text-3xl py-5">
+        A weather forecast application using React Tailwind CSS And Typescript
+      </h1>
+      <p className="text-x pt-5 pb-8">The application should allow users to search for a location <br /> Displaythe current weather conditions as well as the forecast for the next few days.</p>
+      <Search  onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
-    </div>
+    </main>
   );
 }
 

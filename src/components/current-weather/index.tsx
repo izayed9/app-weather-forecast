@@ -1,4 +1,6 @@
 import React from "react";
+import "./current-weather.css";
+
 
 interface CurrentWeatherProps {
   data: {

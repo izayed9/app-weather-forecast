@@ -6,7 +6,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-
+import "./forecast.css";
 
 interface ForecastProps {
   data: {
