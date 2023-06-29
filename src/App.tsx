@@ -2,6 +2,7 @@ import { useState } from "react";
 import { weatherApiKey, WEATHER_API_URL } from "./api";
 import CurrentWeather from "./components/current-weather";
 import Forecast from "./components/forecast";
+import Mehan from "./components/mehan";
 import Search from "./components/search";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       <h1 className="text-3xl py-5">
         A weather forecast application using React Tailwind CSS And Typescript
       </h1>
+      <Mehan/>
       <p className="text-x pt-5 pb-8">The application should allow users to search for a location <br /> Displaythe current weather conditions as well as the forecast for the next few days.</p>
       <Search  onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
